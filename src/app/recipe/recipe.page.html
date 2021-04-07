@@ -1,0 +1,34 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button slot="icon-only" (click)="close()" color="primary">
+          <ion-icon name="close"></ion-icon>
+      </ion-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="header ion-padding">
+    <h1 [innerHtml]="title"></h1>
+  </div>
+  <div class="content">
+      <ion-grid>
+        <ion-row>
+          <ion-col class="ion-text-center">
+            <img [src]="recipe.link_image" class="img-recipe">
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="description ion-padding">
+              {{recipe.descripcion_larga ? recipe.descripcion_larga: recipe.descripcion_corta}}
+            </div>
+            <div class="price ion-padding">
+              {{recipe.precio}}
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </div>
+</ion-content>
